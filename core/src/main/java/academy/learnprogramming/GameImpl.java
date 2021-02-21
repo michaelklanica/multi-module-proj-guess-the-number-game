@@ -18,12 +18,17 @@ public class GameImpl implements Game{
     private int remainingGuesses;
     private boolean validNumberRange = true;
 
-    // == CONSTRUCTORS ==
-    public GameImpl(NumberGenerator numberGenerator) {
+    // Commented out to use setter-based dependency injection instead (see setNumberGenerator method)
+//    // == CONSTRUCTORS ==
+//    public GameImpl(NumberGenerator numberGenerator) {
+//        this.numberGenerator = numberGenerator;
+//    }
+
+    // == PUBLIC METHODS ==
+    public void setNumberGenerator(NumberGenerator numberGenerator) {
         this.numberGenerator = numberGenerator;
     }
 
-    // == PUBLIC METHODS ==
     @Override
     public void reset() {
         smallest = 0;
