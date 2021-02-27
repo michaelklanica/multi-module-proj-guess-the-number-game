@@ -3,6 +3,7 @@ package academy.learnprogramming;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -22,12 +23,6 @@ public class GameImpl implements Game{
     private int biggest;
     private int remainingGuesses;
     private boolean validNumberRange = true;
-
-    // Commented out to use setter-based dependency injection instead (see setNumberGenerator method)
-//    // == CONSTRUCTORS ==
-//    public GameImpl(NumberGenerator numberGenerator) {
-//        this.numberGenerator = numberGenerator;
-//    }
 
     // == INIT ==
     @PostConstruct
@@ -78,8 +73,6 @@ public class GameImpl implements Game{
     public int getRemainingGuesses() {
         return remainingGuesses;
     }
-
-
 
     @Override
     public void check() {
